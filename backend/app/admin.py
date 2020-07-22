@@ -7,7 +7,8 @@ class MedicoAdmin(admin.ModelAdmin):
         'nome',
         'crm',
         'email',
-        'telefone'
+        'telefone',
+        'especialidade'
     ]
 
 class EspecialidadeAdmin(admin.ModelAdmin):
