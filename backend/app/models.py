@@ -48,7 +48,7 @@ class Agenda(models.Model):
 
     class Meta:
         ordering = ['dia']
-        unique_together = ['dia', 'horario', 'data_agendamento', 'medico']
+        unique_together = ['dia', 'horario', 'medico']
 
     def __str__(self):
         return f"{self.dia} {self.horario} {self.data_agendamento} {self.medico}"
