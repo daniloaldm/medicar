@@ -46,6 +46,10 @@ class Agenda(models.Model):
     data_agendamento = models.DateTimeField(default=timezone.now(), editable=False)
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
 
+    class Meta:
+        ordering = ['dia']
+        unique_together = ['dia', 'horario', 'data_agendamento', 'medico']
+
     def __str__(self):
         return f"{self.dia} {self.horario} {self.data_agendamento} {self.medico}"
         
