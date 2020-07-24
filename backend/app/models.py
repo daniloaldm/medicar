@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.db import migrations, models
 from django.utils import timezone
@@ -18,7 +17,6 @@ class Especialidade(models.Model):
         return f"{self.especialidade}"
 
 
-
 class Medico(models.Model):
     POST_STATUS = (
         ('active', 'Ativo'),
@@ -30,10 +28,24 @@ class Medico(models.Model):
     email = models.EmailField()
     telefone = models.CharField(max_length=20)
     especialidade = models.ForeignKey(Especialidade, on_delete=models.CASCADE)
-
     unique_together = ['crm', 'telefone', 'email']
     ordering = ['id']
 
     def __str__(self):
-        return self.nome
+        return f"{self.nome} "
 
+class Agenda(models.Model):
+
+    POST_STATUS = (
+        ('active', 'Ativo'),
+        ('draft', 'Rascunho')
+    )
+
+    dia =  models.DateField()
+    horario = models.TimeField()
+    data_agendamento = models.DateTimeField(default=timezone.now(), editable=False)
+    medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.dia} {self.horario} {self.data_agendamento} {self.medico}"
+        

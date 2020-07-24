@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Especialidade, Medico)
+from .models import (Especialidade, Medico, Agenda)
 
 # Register your models here.
 class MedicoAdmin(admin.ModelAdmin):
@@ -16,5 +16,14 @@ class EspecialidadeAdmin(admin.ModelAdmin):
         'especialidade'
     ]
 
+class AgendaAdmin(admin.ModelAdmin):
+    list_display = [
+        'medico',
+        'dia',
+        'horario',
+        'data_agendamento'
+    ]
+
 admin.site.register(Medico, MedicoAdmin)
 admin.site.register(Especialidade, EspecialidadeAdmin)
+admin.site.register(Agenda, AgendaAdmin)
