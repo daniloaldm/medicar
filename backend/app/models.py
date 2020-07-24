@@ -23,12 +23,12 @@ class Medico(models.Model):
         ('draft', 'Rascunho')
     )
 
-    nome = models.CharField(max_length=200)
-    crm =  models.CharField(max_length=10)
-    email = models.EmailField()
-    telefone = models.CharField(max_length=20)
+    nome = models.CharField(max_length=100, unique=True)
+    crm =  models.CharField(max_length=10, unique=True)
+    email = models.EmailField(unique=True, blank=True)
+    telefone = models.CharField(max_length=20, blank=True)
     especialidade = models.ForeignKey(Especialidade, on_delete=models.CASCADE)
-    unique_together = ['crm', 'telefone', 'email']
+    
     ordering = ['id']
 
     def __str__(self):
