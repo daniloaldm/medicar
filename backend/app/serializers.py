@@ -32,4 +32,4 @@ class ConsultaSerializer(serializers.ModelSerializer):
         model = Consulta
         # fields = ['data_agendamento', 'agenda']
         fields = '__all__'
-        depth = 2
+        # depth = 2
