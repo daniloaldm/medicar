@@ -3,6 +3,7 @@ from django.db import migrations, models
 from django.utils import timezone
 from django.core.validators import *
 from django.contrib.auth.models import User
+# from django.contrib.postgres.fields import ArrayField
 
 class Especialidade(models.Model):
     POST_STATUS = (
@@ -41,15 +42,17 @@ class Agenda(models.Model):
         ('draft', 'Rascunho')
     )
 
-    dia =  models.DateField()
-    horario = models.TimeField()
-    data_agendamento = models.DateTimeField(default=timezone.now(), editable=False)
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
+    dia =  models.DateField()
+    horarios = models.TimeField()
+    
+    # data_agendamento = models.DateTimeField(default=timezone.now(), editable=False)
+
 
     class Meta:
         ordering = ['dia']
-        unique_together = ['dia', 'horario', 'medico']
+        unique_together = ['medico', 'dia', 'horarios']
 
     def __str__(self):
-        return f"{self.dia} {self.horario} {self.data_agendamento} {self.medico}"
+        return f"{self.medico} {self.dia} {self.horarios}"
         

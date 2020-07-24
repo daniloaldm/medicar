@@ -22,5 +22,5 @@ class AgendaSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Agenda
-        fields = '__all__'
+        fields = ['medico', 'dia', 'horarios']
         depth = 2

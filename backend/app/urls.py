@@ -3,8 +3,8 @@ from rest_framework import routers
 from .views import (EspecialidadeView, MedicoView, AgendaView)
 
 router = routers.DefaultRouter()
-router.register(r'medicos', MedicoView)
 router.register(r'especialidades', EspecialidadeView)
+router.register(r'medicos', MedicoView)
 router.register(r'agendas', AgendaView)
 
 urlpatterns = [

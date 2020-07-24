@@ -20,8 +20,7 @@ class AgendaAdmin(admin.ModelAdmin):
     list_display = [
         'medico',
         'dia',
-        'horario',
-        'data_agendamento'
+        'horarios',
     ]
 
 admin.site.register(Medico, MedicoAdmin)
