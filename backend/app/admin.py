@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Especialidade, Medico, Agenda)
+from .models import (Especialidade, Medico, Agenda, Horarios)
 
 # Register your models here.
 class MedicoAdmin(admin.ModelAdmin):
@@ -16,6 +16,11 @@ class EspecialidadeAdmin(admin.ModelAdmin):
         'especialidade'
     ]
 
+class HorariosInlineAdmin(admin.StackedInline):
+    model = Horarios
+    extra = 1
+
+
 class AgendaAdmin(admin.ModelAdmin):
     list_display = [
         'medico',
@@ -23,6 +28,8 @@ class AgendaAdmin(admin.ModelAdmin):
         'horarios',
         'disponivel'
     ]
+    
+    inlines = [HorariosInlineAdmin,]
 
 admin.site.register(Medico, MedicoAdmin)
 admin.site.register(Especialidade, EspecialidadeAdmin)

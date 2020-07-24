@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import viewsets, filters, generics
-from .models import (Especialidade, Medico, Agenda, Consulta)
-from .serializers import (EspecialidadeSerializer, MedicoSerializer, AgendaSerializer, ConsultaSerializer)
+from .models import (Especialidade, Medico, Agenda, Consulta, Horarios)
+from .serializers import (EspecialidadeSerializer, MedicoSerializer, AgendaSerializer, ConsultaSerializer, HorariosSerializer)
 
 class EspecialidadeView(viewsets.ReadOnlyModelViewSet):
     queryset = Especialidade.objects.all()
@@ -16,7 +16,7 @@ class MedicoView(viewsets.ReadOnlyModelViewSet):
 class AgendaView(viewsets.ReadOnlyModelViewSet):
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
-    filter_fields = ['disponivel', 'medico', 'dia', 'horarios']
+    filter_fields = ['disponivel', 'medico', 'dia']
 
 class ConsultaView(viewsets.ModelViewSet):
     queryset = Consulta.objects.all()

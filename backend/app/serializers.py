@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (Especialidade, Medico, Agenda, Consulta)
+from .models import (Especialidade, Medico, Agenda, Consulta, Horarios)
 
 class EspecialidadeSerializer(serializers.ModelSerializer):
 
@@ -17,8 +17,18 @@ class MedicoSerializer(serializers.ModelSerializer):
         fields = '__all__'
         depth = 1
 
+class HorariosSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Horarios
+        fields = ['horarios']
+        # depth = 2
+
+
 class AgendaSerializer(serializers.ModelSerializer):
 
+    horarios = HorariosSerializer(many=True, read_only=True)
     class Meta:
 
         model = Agenda
