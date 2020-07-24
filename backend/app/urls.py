@@ -5,7 +5,7 @@ from .views import (EspecialidadeView, MedicoView, AgendaView)
 router = routers.DefaultRouter()
 router.register(r'medicos', MedicoView)
 router.register(r'especialidades', EspecialidadeView)
-router.register(r'consultas', AgendaView)
+router.register(r'agendas', AgendaView)
 
 urlpatterns = [
     path('', include(router.urls)),
