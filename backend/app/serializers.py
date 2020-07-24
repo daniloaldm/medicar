@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (Especialidade, Medico, Agenda)
+from .models import (Especialidade, Medico, Agenda, Consulta)
 
 class EspecialidadeSerializer(serializers.ModelSerializer):
 
@@ -22,5 +22,14 @@ class AgendaSerializer(serializers.ModelSerializer):
     class Meta:
 
         model = Agenda
-        fields = ['medico', 'dia', 'horarios']
+        fields = ['id', 'medico', 'dia', 'horarios']
+        depth = 2
+
+class ConsultaSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Consulta
+        # fields = ['data_agendamento', 'agenda']
+        fields = '__all__'
         depth = 2

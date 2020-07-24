@@ -21,6 +21,7 @@ class AgendaAdmin(admin.ModelAdmin):
         'medico',
         'dia',
         'horarios',
+        'disponivel'
     ]
 
 admin.site.register(Medico, MedicoAdmin)
