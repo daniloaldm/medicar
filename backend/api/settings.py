@@ -40,10 +40,15 @@ INSTALLED_APPS = [
     'app',
     'rest_framework',
     'django_filters',
+    'rest_framework_simplejwt',
+    'djoser',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 MIDDLEWARE = [

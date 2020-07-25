@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import (Especialidade, Medico, Agenda, Consulta, Horarios)
+from .models import (Especialidade, Medico, Agenda, Consulta, Horarios, userProfile)
 
 class EspecialidadeSerializer(serializers.ModelSerializer):
 
@@ -34,4 +34,10 @@ class ConsultaSerializer(serializers.ModelSerializer):
         model = Consulta
         fields = ['id', 'dia', 'horario', 'data_agendamento', 'medico']
         # depth = 2
+
+class userProfileSerializer(serializers.ModelSerializer):
+    user=serializers.StringRelatedField(read_only=True)
+    class Meta:
+        model=userProfile
+        fields='__all__'
 
