@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import (Especialidade, Medico, Agenda, Horarios)
 
-# Register your models here.
 class MedicoAdmin(admin.ModelAdmin):
     list_display = [
         'nome',

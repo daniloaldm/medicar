@@ -16,7 +16,7 @@ class MedicoView(viewsets.ReadOnlyModelViewSet):
 class AgendaView(viewsets.ReadOnlyModelViewSet):
     queryset = Agenda.objects.all()
     serializer_class = AgendaSerializer
-    filter_fields = ['disponivel', 'medico', 'dia']
+    filter_fields = ['medico', 'dia', 'disponivel']
 
 class ConsultaView(viewsets.ModelViewSet):
     queryset = Consulta.objects.all()
