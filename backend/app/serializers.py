@@ -60,5 +60,9 @@ class ConsultaSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Consulta
+        extra_kwargs = {
+            'agenda': {'write_only': True},
+            'paciente': {'write_only': True}
+        }
         fields = '__all__'
 
