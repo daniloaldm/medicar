@@ -41,21 +41,22 @@ class ConsultaSerializer(serializers.ModelSerializer):
     horario = serializers.StringRelatedField(read_only=True, source='agenda.horario')
     medico = MedicoSerializer(read_only=True, source='agenda.medico')
     
-    def validate(self, data):
-        data_atual = datetime.date.today()
-        hora_atual = datetime.datetime.now().time()
-        agenda_selecionada = data['agenda']
+    # def validate(self, data):
+    #     data_atual = datetime.date.today()
+    #     now = datetime.datetime.now() 
+    #     hora_atual = now.strftime("%m/%d/%Y, %H:%M:%S")
+    #     agenda_selecionada = data['agenda']
 
-        consulta_paciente = Consulta.objects.all().filter(paciente=data['paciente'])
+    #     consulta_paciente = Consulta.objects.all().filter(paciente=data['paciente'])
 
-        if agenda_selecionada.dia < data_atual:
-            raise serializers.DjangoValidationError('Não foi possível marcar consulta: Dia passado!')
-        if (agenda_selecionada.dia == data_atual) and (agenda_selecionada.horario < hora_atual):
-            raise serializers.DjangoValidationError('Não foi possível marcar consulta: Horário passado!')
-        if consulta_paciente.filter(agenda__dia=agenda_selecionada.dia, agenda__horario=agenda_selecionada.horario):
-            raise serializers.DjangoValidationError('Não foi possível marcar consulta: Há uma outra consulta marcada para mesmo dia e horário!')
+    #     if agenda_selecionada.dia < data_atual:
+    #         raise serializers.DjangoValidationError('Não foi possível marcar consulta: Dia passado!')
+    #     if (agenda_selecionada.dia == data_atual) and (agenda_selecionada.horario < hora_atual):
+    #         raise serializers.DjangoValidationError('Não foi possível marcar consulta: Horário passado!')
+    #     if consulta_paciente.filter(agenda__dia=agenda_selecionada.dia, agenda__horario=agenda_selecionada.horario):
+    #         raise serializers.DjangoValidationError('Não foi possível marcar consulta: Há uma outra consulta marcada para mesmo dia e horário!')
     
-        return data
+    #     return data
 
     class Meta:
         model = Consulta
