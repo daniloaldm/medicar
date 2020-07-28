@@ -36,7 +36,7 @@ class userProfileSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class ConsultaSerializer(serializers.ModelSerializer):
-    paciente = serializers.HiddenField(default=serializers.CurrentUserDefault())
+    paciente = userProfile()
     dia = serializers.StringRelatedField(read_only=True, source='agenda.dia')
     horario = serializers.StringRelatedField(read_only=True, source='agenda.horario')
     medico = MedicoSerializer(read_only=True, source='agenda.medico')
