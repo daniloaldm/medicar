@@ -38,7 +38,7 @@ class userProfileSerializer(serializers.ModelSerializer):
 class ConsultaSerializer(serializers.ModelSerializer):
     paciente = userProfile()
     dia = serializers.StringRelatedField(read_only=True, source='agenda.dia')
-    horario = serializers.StringRelatedField(read_only=True, source='agenda.horario')
+    # horario = serializers.StringRelatedField(read_only=True, source='horario.horario')
     medico = MedicoSerializer(read_only=True, source='agenda.medico')
     
     # def validate(self, data):

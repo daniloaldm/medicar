@@ -61,6 +61,7 @@ class Horario(models.Model):
 
 class Consulta(models.Model):
     agenda = models.OneToOneField(Agenda, on_delete=models.CASCADE)
+    horario = models.TimeField(blank=False)
     paciente = models.ForeignKey(User, on_delete=models.CASCADE)
     data_agendamento = models.DateTimeField(auto_now=True)
     
