@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import (Especialidade, Medico, Agenda, Horarios)
+from .models import (Especialidade, Medico, Agenda, Horario)
 
 class MedicoAdmin(admin.ModelAdmin):
     list_display = [
@@ -15,8 +15,8 @@ class EspecialidadeAdmin(admin.ModelAdmin):
         'especialidade'
     ]
 
-class HorariosInlineAdmin(admin.StackedInline):
-    model = Horarios
+class HorarioInlineAdmin(admin.StackedInline):
+    model = Horario
     extra = 1
 
 
@@ -24,11 +24,11 @@ class AgendaAdmin(admin.ModelAdmin):
     list_display = [
         'medico',
         'dia',
-        'horarios',
+        'horario',
         'disponivel'
     ]
     
-    inlines = [HorariosInlineAdmin,]
+    inlines = [HorarioInlineAdmin,]
 
 admin.site.register(Medico, MedicoAdmin)
 admin.site.register(Especialidade, EspecialidadeAdmin)

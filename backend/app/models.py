@@ -3,6 +3,7 @@ import datetime
 from django.core.validators import *
 from django.contrib.auth.models import User
 
+
 class Especialidade(models.Model):
 
     especialidade = models.CharField(max_length=200)
@@ -10,7 +11,6 @@ class Especialidade(models.Model):
 
     def __str__(self):
         return f"{self.especialidade}"
-
 
 class Medico(models.Model):
 
@@ -26,46 +26,46 @@ class Medico(models.Model):
 class Agenda(models.Model):
 
     medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
-    dia =  models.DateField()
+    dia = models.DateField()
+    horario = models.TimeField()
     disponivel = models.BooleanField(default=True)
-    
+
+    def clean(self):
+        data_atual = datetime.date.today()
+        
+        if self.dia < data_atual:
+            raise serializers.DjangoValidationError('Não é permitido criar agenda para dia passado!')
+        if (self.dia == data_atual) and (self.horario < hora_atual):
+            raise serializers.DjangoValidationError('Não é permitido criar agenda para horario passado!')
+        
     class Meta:
-        unique_together = [['medico', 'dia']]
+        unique_together = ['medico', 'dia']
 
     def __str__(self):
-        return f"{self.dia} {self.horarios}"
+        return f"{self.medico} {self.dia} {self.horario}"
  
     @property
-    def horarios(self):
-        return list(self.horarios_set.all())
+    def horario(self):
+        return list(self.horario_set.all())
 
-class Horarios(models.Model):
-    horarios = models.TimeField(blank=False)
+class Horario(models.Model):
+    horario = models.TimeField(blank=False)
     agenda = models.ForeignKey(Agenda, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['horarios']
-        unique_together = [['horarios', 'agenda']] 
+        ordering = ['horario']
+        unique_together = ['horario', 'agenda']
 
     def __str__(self):
-        return f"{self.horarios}"
+        return f"{self.horario}"
 
 class Consulta(models.Model):
-    dia =  models.DateField()
-    horario = models.TimeField(blank=False)
+    agenda = models.OneToOneField(Agenda, on_delete=models.CASCADE)
+    paciente = models.ForeignKey(User, on_delete=models.CASCADE)
     data_agendamento = models.DateTimeField(auto_now=True)
-    medico = models.ManyToManyField(Medico)
-
-    def __str__(self):
-        return f"{self.dia} {self.horario} {self.data_agendamento} {self.medico}"
-
+    
 class userProfile(models.Model):
     user=models.OneToOneField(User,on_delete=models.CASCADE,related_name="profile")
-    description=models.TextField(blank=True,null=True)
-    location=models.CharField(max_length=30,blank=True)
-    date_joined=models.DateTimeField(auto_now_add=True)
-    updated_on=models.DateTimeField(auto_now=True)
-    is_organizer=models.BooleanField(default=False)
 
     def __str__(self):
         return self.user.username
