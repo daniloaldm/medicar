@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import (Especialidade, Medico, Agenda, Consulta, Horario, userProfile)
-import datetime
+from datetime import date
 
 class EspecialidadeSerializer(serializers.ModelSerializer):
 
@@ -36,32 +36,32 @@ class userProfileSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class ConsultaSerializer(serializers.ModelSerializer):
+    id_agenda = serializers.PrimaryKeyRelatedField(
+        queryset=Agenda.objects.filter(dia__gte=date.today()),
+        write_only=True,
+        label='agenda'
+    )
+
+    dia = serializers.DateField(source="agenda.dia", read_only=True)
+    
+    medico = MedicoSerializer(source="agenda.medico", read_only=True)
+
     paciente = userProfile()
-    dia = serializers.StringRelatedField(read_only=True, source='agenda.dia')
-    # horario = serializers.StringRelatedField(read_only=True, source='horario.horario')
-    medico = MedicoSerializer(read_only=True, source='agenda.medico')
-    
-    def validate(self, data):
-        data_atual = datetime.date.today()
-        hora_atual = datetime.datetime.now().time()
-        agenda_selecionada = data['agenda']
-
-        consulta_paciente = Consulta.objects.all().filter(paciente=data['paciente'])
-
-        if agenda_selecionada.dia < data_atual:
-            raise serializers.DjangoValidationError('Não foi possível marcar consulta: Dia passado!')
-        if (agenda_selecionada.dia == data_atual) and (agenda_selecionada.horario < hora_atual):
-            raise serializers.DjangoValidationError('Não foi possível marcar consulta: Horário passado!')
-        # if consulta_paciente.filter(agenda__dia=agenda_selecionada.dia, agenda__horario=agenda_selecionada.horario):
-        #     raise serializers.DjangoValidationError('Não foi possível marcar consulta: Há uma outra consulta marcada para mesmo dia e horário!')
-    
-        return data
 
     class Meta:
         model = Consulta
         extra_kwargs = {
-            'agenda': {'write_only': True},
+            'id_agenda': {'write_only': True},
             'paciente': {'write_only': True}
         }
-        fields = '__all__'
+        fields = ['id', 'dia', 'horario', 'data_agendamento', 'medico', 'paciente', 'id_agenda']
 
+    def create(self, data):
+        agenda = data.pop('id_agenda')
+
+        return Consulta.objects.create(
+            dia=agenda.dia,
+            agenda=agenda,
+            paciente=data['paciente'],
+            horario=data['horario']
+        )
