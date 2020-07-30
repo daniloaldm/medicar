@@ -21,13 +21,7 @@ class HorarioInlineAdmin(admin.StackedInline):
 
 
 class AgendaAdmin(admin.ModelAdmin):
-    list_display = [
-        'medico',
-        'dia',
-        'horario',
-        'disponivel'
-    ]
-    
+    list_display = ('id', 'medico', 'dia')
     inlines = [HorarioInlineAdmin,]
 
 admin.site.register(Medico, MedicoAdmin)

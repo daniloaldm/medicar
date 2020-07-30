@@ -6,37 +6,44 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import (ListCreateAPIView,RetrieveUpdateDestroyAPIView,)
 from .models import (Especialidade, Medico, Agenda, Consulta, Horario, userProfile)
 from .serializers import (EspecialidadeSerializer, MedicoSerializer, AgendaSerializer, ConsultaSerializer, HorarioSerializer, userProfileSerializer)
+from .filtersCustom import *
+from rest_framework import mixins
 
-class EspecialidadeView(viewsets.ReadOnlyModelViewSet):
+class EspecialidadeView(mixins.ListModelMixin,viewsets.GenericViewSet):
     queryset = Especialidade.objects.all()
     serializer_class = EspecialidadeSerializer
-    # permission_classes=[IsAuthenticated]
+    permission_classes=[IsAuthenticated]
     filter_backends = [SearchFilter]
     search_fields = ['especialidade']
 
-class MedicoView(viewsets.ReadOnlyModelViewSet):
+class MedicoView(mixins.ListModelMixin,viewsets.GenericViewSet):
     queryset = Medico.objects.all()
     serializer_class = MedicoSerializer
-    # permission_classes=[IsAuthenticated]
+    permission_classes=[IsAuthenticated]
     filter_backends = [SearchFilter]
     search_fields = ['nome']
 
-class AgendaView(viewsets.ReadOnlyModelViewSet):
-    queryset = Agenda.objects.all()
+class AgendaView(mixins.ListModelMixin,viewsets.GenericViewSet):
+    queryset = Agenda.disponivel.prefetch_horarios_disponiveis()
     serializer_class = AgendaSerializer
-    # permission_classes=[IsAuthenticated]
-    filter_fields = ['medico', 'dia', 'disponivel']
+    permission_classes=[IsAuthenticated]
+    ordering_fields = ['dia']
+    filter_fields = '__all__'
 
-class ConsultaView(viewsets.ModelViewSet):
+class ConsultaView( mixins.ListModelMixin, 
+        mixins.CreateModelMixin, 
+        mixins.DestroyModelMixin, 
+        viewsets.GenericViewSet
+        ):
     queryset = Consulta.objects.all()
     serializer_class = ConsultaSerializer
-    # permission_classes=[IsAuthenticated]
-    filter_fields = '__all__'
+    permission_classes=[IsAuthenticated]
+    filter_backends = [ConsultasFilter]
 
 class UserProfileListCreateView(ListCreateAPIView):
     queryset=userProfile.objects.all()
     serializer_class=userProfileSerializer
-    # permission_classes=[IsAuthenticated]
+    permission_classes=[IsAuthenticated]
 
     def perform_create(self, serializer):
         user=self.request.user
