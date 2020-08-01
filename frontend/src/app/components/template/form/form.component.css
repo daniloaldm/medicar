@@ -100,3 +100,7 @@ mat-checkbox {
     left: 483px;
     top: 235px;
 }
+
+.mat-input-element  {
+    caret-color: #A8A8A8;
+}
