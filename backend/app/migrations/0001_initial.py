@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             name='Agenda',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('dia', models.DateField(validators=[app.models.Agenda.validar_data_de_Agendamento])),
+                ('dia', models.DateField(validators=[app.models.Agenda.validar_data_de_agendamento])),
             ],
             options={
                 'ordering': ['dia'],

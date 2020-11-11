@@ -37,7 +37,6 @@ class ConsultaView( mixins.ListModelMixin,
     queryset = Consulta.objects.all()
     serializer_class = ConsultaSerializer
     permission_classes=[IsAuthenticated]
-    # filter_backends = [ConsultasFilter]
     filter_fields = '__all__'
 
 class UserProfileListCreateView(ListCreateAPIView):

@@ -28,13 +28,13 @@ class Medico(models.Model):
 
 class Agenda(models.Model):
 
-    def validar_data_de_Agendamento(value):
+    def validar_data_de_agendamento(value):
         diaDeHoje = date.today()
         if (value < diaDeHoje):
             raise ValidationError('A Data Não pode Ser Menor Que a Data Atual')
 
     medico = models.ForeignKey(Medico, related_name='medico', on_delete=models.CASCADE)
-    dia = models.DateField(validators=[validar_data_de_Agendamento])
+    dia = models.DateField(validators=[validar_data_de_agendamento])
     objects = models.Manager()
     disponivel = AgendaDisponivelManager.from_queryset(AgendaQuerySet)()
 
