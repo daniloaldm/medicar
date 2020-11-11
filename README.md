@@ -20,9 +20,9 @@ Vá para o diretório backend:
 ```
 cd backend
 ```
-Para facilitar a execução deixei o banco de dados e a venv de fora do .gitignore. Execute:
+Para facilitar a execução deixei o banco de dados fora do .gitignore. Execute:
 ```
-source start-env/bin/active
+pip install -r requirements.txt
 ```
 Após isso, basta executar: 
 ```
