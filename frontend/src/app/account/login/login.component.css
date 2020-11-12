@@ -1,61 +1,70 @@
-.mat-form-field.mat-form-field {
-    /* position: absolute; */
-    width: 400px;
-    height: 40px;
-    left: 483px;
-    top: 325px;
-
-    /* White */
-    background: #FFFFFF;
-
-    /* Gray 2 */
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-bottom: 25px;
-
-
+.form-login {
+    display: block;
+    text-align: center;
+    background: crimson;
 }
 
-::ng-deep .mat-form-field .mat-label {
-    color: #A8A8A8;
+.logo {
+    width: 180.74px;
+    height: 50px;
+    margin-right: 24%;
+}
+
+.mat-form-field.mat-form-field {
+    width: 400px;
+    height: 40px;
+    margin-top: 3%;
 }
 
 mat-form-field mat-label{
     color:#A8A8A8;
 }
-  
+
 input.mat-input-element {
     color: #444444;
 }
 
+/* checkbox */
+mat-checkbox {
+    /* White */
+    background: #FFFFFF;
+    margin-right: 244px;
+    margin-top: 2%;
+        
+}
+
+.mat-button{
+    /* position: absolute; */
+    background: #FFFFFF;
+    display: block;
+    margin-top: 3%;
+    margin-left: 263px;
+    width: 180px;
+    height: 40px;
+}
+
+.mat-flat-button {
+    /* position: absolute; */
+    background: #49B4BB;
+    display: block;
+    margin-top: -4.3%;
+    margin-left: 484px;
+    width: 180px;
+    height: 40px;
+}
+
+/* Sobreescritas Material */
+::ng-deep .mat-form-field .mat-label {
+    color: #A8A8A8;
+}
+  
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
     color:#49B4BB;
 }
 
-
 /* mat-input focused color */
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
     color:#49B4BB;
-}
-
-/* checkbox */
-mat-checkbox {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    left: 483px;
-    top: 433px;
-    
-    /* White */
-    background: #FFFFFF;
-    /* Gray 2 */
-    
-    /* border: 1px solid #A8A8A8; */
-    box-sizing: border-box;
-    border-radius: 4px;
-    margin-top: 20px;
-    border-color: #A8A8A8;
-    
 }
 
 ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
@@ -66,41 +75,10 @@ mat-checkbox {
     color: #A8A8A8;
 }
 
-.mat-button{
-    position: absolute;
-    width: 180px;
-    height: 40px;
-    left: 483px;
-    top: 492px;
-
-    background: #FFFFFF;
-    border-radius: 8px;
-    /* color: #FFFFFF; */
-}
-
 .mat-button.mat-accent{
     color: #49B4BB;
 }
 
-.mat-flat-button {
-    position: absolute;
-    width: 180px;
-    height: 40px;
-    left: 703px;
-    top: 492px;
-
-    background: #49B4BB;
-    border-radius: 8px;
-}
-
-.logo {
-    position: absolute;
-    width: 180.74px;
-    height: 50px;
-    left: 483px;
-    top: 235px;
-}
-
 .mat-input-element  {
-    caret-color: #A8A8A8;
+    caret-color: #A8A8A8;   
 }
