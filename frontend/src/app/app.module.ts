@@ -3,8 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormComponent } from './components/template/form/form.component';
+import { LoginComponent } from './account/login/login.component';
+import { CreateAccountComponent } from './account/create-account/create-account.component';
+import { HomeComponent } from './layout/home/home.component';
+import { AuthenticationComponent } from './layout/authentication/authentication.component';
+import { FormsModule } from '@angular/forms';
+
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -15,18 +19,21 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    LoginComponent,
+    CreateAccountComponent,
+    HomeComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
+    FormsModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -36,7 +43,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatRadioModule,
     MatSelectModule,
     MatSliderModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
