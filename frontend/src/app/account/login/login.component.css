@@ -1,7 +1,17 @@
-.form-login {
-    display: block;
-    text-align: center;
+::ng-deep .ng-star-inserted{
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+    align-items: center !important;
+}
+
+
+form {
     background: crimson;
+    display: inline-block;
+    position: relative;
+    margin-left: 350px;
+    margin-right: 350px;
 }
 
 .logo {
