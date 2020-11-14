@@ -93,3 +93,7 @@ mat-checkbox {
 .mat-input-element  {
     caret-color: #A8A8A8;   
 }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 2em 0 1em 0 !important; 
+}
