@@ -1,22 +1,24 @@
 <form>
-  <img class="logo" src="../../../assets/logo.png" >
-  
-  <p>
-  <mat-form-field appearance="outline">
-      <mat-label>Email ou Login</mat-label>
-      <input matInput>
-  </mat-form-field>
-  </p>
+    <img class="logo" src="../../../assets/logo.png">
 
-  <p>
-  <mat-form-field appearance="outline">
-      <mat-label>Senha</mat-label>
-      <input matInput type="password">
-  </mat-form-field>
-  </p>
-  
-  <mat-checkbox>Lembar minha senha</mat-checkbox>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email ou Login</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
 
-  <button mat-button color="accent">Criar Conta</button>
-  <button mat-flat-button color="accent">Acessar</button>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <show-hide-password size="lg">
+                <input matInput type="password">
+            </show-hide-password>
+        </mat-form-field>
+    </p>
+
+    <mat-checkbox>Lembar minha senha</mat-checkbox>
+
+    <button mat-button color="accent">Criar Conta</button>
+    <button mat-flat-button color="accent">Acessar</button>
 </form>

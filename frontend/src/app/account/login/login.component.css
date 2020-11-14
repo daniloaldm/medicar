@@ -1,11 +1,10 @@
-::ng-deep .ng-star-inserted{
+::ng-deep .ng-star-inserted {
     display: flex !important;
     width: 100% !important;
     height: 75% !important;
     align-content: center !important;
     margin-top: 5%;
 }
-
 
 form {
     /* background: crimson; */
@@ -26,15 +25,17 @@ form {
     border-radius: 8px;
 }
 
-mat-form-field mat-label{
-    color:#A8A8A8;
+mat-form-field mat-label {
+    color: #A8A8A8;
 }
 
 input.mat-input-element {
     color: #444444;
 }
 
+
 /* checkbox */
+
 mat-checkbox {
     /* White */
     background: #FFFFFF;
@@ -44,7 +45,7 @@ mat-checkbox {
     margin-bottom: 39px;
 }
 
-.mat-button{
+.mat-button {
     background: #FFFFFF;
     display: block;
     margin-top: 3%;
@@ -64,21 +65,26 @@ mat-checkbox {
     border-radius: 8px;
 }
 
+
 /* Sobreescritas Material */
+
 ::ng-deep .mat-form-field .mat-label {
     color: #A8A8A8;
 }
-  
+
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
-    color:#49B4BB;
+    color: #49B4BB;
 }
+
 
 /* mat-input focused color */
+
 ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
-    color:#49B4BB;
+    color: #49B4BB;
 }
 
-::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
     background-color: #49B4BB;
 }
 
@@ -86,14 +92,26 @@ mat-checkbox {
     color: #A8A8A8;
 }
 
-.mat-button.mat-accent{
+.mat-button.mat-accent {
     color: #49B4BB;
 }
 
-.mat-input-element  {
-    caret-color: #A8A8A8;   
+.mat-input-element {
+    caret-color: #A8A8A8;
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
-    padding: 2em 0 1em 0 !important; 
+    padding: 2em 0 1em 0 !important;
+}
+
+::ng-deep .ng-fa-icon {
+    color: #A8A8A8;
+}
+
+::ng-deep .btn-outline-secondary {
+    margin-left: 190px !important;
+    border: none;
+    background-color: white;
+    position: fixed;
+    margin-top: -15px;
 }
