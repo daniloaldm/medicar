@@ -8,8 +8,8 @@
 
 form {
     /* background: crimson; */
-    margin-left: 350px;
-    margin-right: 350px;
+    margin-left: 480px;
+    margin-right: 480px;
 }
 
 .logo {
@@ -40,7 +40,7 @@ mat-checkbox {
     /* White */
     background: #FFFFFF;
     margin-right: 244px;
-    margin-top: 5%;
+    margin-top: 6%;
     margin-left: 2px;
     margin-bottom: 39px;
 }
@@ -109,9 +109,11 @@ mat-checkbox {
 }
 
 ::ng-deep .btn-outline-secondary {
-    margin-left: 190px !important;
+    margin-left: 350px !important;
     border: none;
     background-color: white;
-    position: fixed;
-    margin-top: -15px;
+    position: absolute;
+    transform: translate(-50%);
+    right: -20px;
+    top: 50%;
 }
