@@ -1,15 +1,14 @@
 ::ng-deep .ng-star-inserted{
     display: flex !important;
     width: 100% !important;
-    height: 100% !important;
-    align-items: center !important;
+    height: 75% !important;
+    align-content: center !important;
+    margin-top: 5%;
 }
 
 
 form {
-    background: crimson;
-    display: inline-block;
-    position: relative;
+    /* background: crimson; */
     margin-left: 350px;
     margin-right: 350px;
 }
@@ -23,7 +22,8 @@ form {
 .mat-form-field.mat-form-field {
     width: 400px;
     height: 40px;
-    margin-top: 3%;
+    margin-top: 3.5%;
+    border-radius: 8px;
 }
 
 mat-form-field mat-label{
@@ -39,28 +39,29 @@ mat-checkbox {
     /* White */
     background: #FFFFFF;
     margin-right: 244px;
-    margin-top: 2%;
-        
+    margin-top: 5%;
+    margin-left: 2px;
+    margin-bottom: 39px;
 }
 
 .mat-button{
-    /* position: absolute; */
     background: #FFFFFF;
     display: block;
     margin-top: 3%;
-    margin-left: 263px;
+    margin-left: 0px;
     width: 180px;
     height: 40px;
+    border-radius: 8px;
 }
 
 .mat-flat-button {
-    /* position: absolute; */
     background: #49B4BB;
     display: block;
-    margin-top: -4.3%;
-    margin-left: 484px;
+    margin-top: -41px;
+    margin-left: 220px;
     width: 180px;
     height: 40px;
+    border-radius: 8px;
 }
 
 /* Sobreescritas Material */
