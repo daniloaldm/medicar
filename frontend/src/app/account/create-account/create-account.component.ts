@@ -17,4 +17,8 @@ export class CreateAccountComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  async onSubmit() {
+
+  }
+
 }

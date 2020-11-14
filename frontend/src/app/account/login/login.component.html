@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
     <img class="logo" src="../../../assets/logo.png">
 
     <p>
@@ -20,5 +20,5 @@
     <mat-checkbox>Lembar minha senha</mat-checkbox>
 
     <button mat-button color="accent" [routerLink]="['/create-account']">Criar Conta</button>
-    <button mat-flat-button color="accent">Acessar</button>
+    <button type="submit" mat-flat-button color="accent">Acessar</button>
 </form>

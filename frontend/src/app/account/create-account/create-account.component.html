@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit()" #form="ngForm">
     <img class="logo" src="../../../assets/logo.png">
 
     <h1>Crie sua conta</h1>
@@ -36,5 +36,5 @@
     </p>
 
     <button mat-button color="accent" [routerLink]="['/login']">Cancelar</button>
-    <button mat-flat-button color="accent">Confirmar</button>
+    <button type="submit" mat-flat-button color="accent">Confirmar</button>
 </form>
