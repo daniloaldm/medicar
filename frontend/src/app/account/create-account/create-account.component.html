@@ -1,1 +1,38 @@
-<p>create-account works!</p>
+<form>
+    <img class="logo" src="../../../assets/logo.png">
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <show-hide-password size="lg">
+                <input matInput type="password">
+            </show-hide-password>
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Confirmar Senha</mat-label>
+            <show-hide-password size="lg">
+                <input matInput type="password">
+            </show-hide-password>
+        </mat-form-field>
+    </p>
+
+    <button mat-button color="accent">Cancelar</button>
+    <button mat-flat-button color="accent">Confirmar</button>
+</form>

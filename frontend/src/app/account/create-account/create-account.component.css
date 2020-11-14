@@ -1,0 +1,107 @@
+::ng-deep .ng-star-inserted {
+    display: flex !important;
+    height: 75% !important;
+    align-content: center !important;
+    margin-top: 1%;
+}
+
+form {
+    /* background: crimson; */
+    margin-left: 480px;
+    margin-right: 480px;
+}
+
+.logo {
+    width: 180.74px;
+    height: 50px;
+    margin-right: 24%;
+}
+
+.mat-form-field.mat-form-field {
+    width: 400px;
+    height: 40px;
+    margin-top: 3.5%;
+    border-radius: 8px;
+}
+
+mat-form-field mat-label {
+    color: #A8A8A8;
+}
+
+input.mat-input-element {
+    color: #444444;
+}
+
+.mat-button {
+    background: #FFFFFF;
+    display: block;
+    margin-top: 3%;
+    margin-left: 0px;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.mat-flat-button {
+    background: #49B4BB;
+    display: block;
+    margin-top: -41px;
+    margin-left: 220px;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+
+/* Sobreescritas Material */
+
+::ng-deep .mat-form-field .mat-label {
+    color: #A8A8A8;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #49B4BB;
+}
+
+
+/* mat-input focused color */
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #49B4BB;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: #49B4BB;
+}
+
+::ng-deep .mat-checkbox-label {
+    color: #A8A8A8;
+}
+
+.mat-button.mat-accent {
+    color: #49B4BB;
+}
+
+.mat-input-element {
+    caret-color: #A8A8A8;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: 2em 0 1em 0 !important;
+}
+
+::ng-deep .ng-fa-icon {
+    color: #A8A8A8;
+}
+
+::ng-deep .btn-outline-secondary {
+    margin-left: 350px !important;
+    border: none;
+    background-color: white;
+    position: absolute;
+    transform: translate(-50%);
+    right: -20px;
+    top: 20%;
+}
