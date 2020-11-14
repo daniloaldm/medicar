@@ -105,3 +105,13 @@ input.mat-input-element {
     right: -20px;
     top: 20%;
 }
+
+h1 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    color: #444444;
+    margin-top: 12px;
+    margin-bottom: 0px;
+}
