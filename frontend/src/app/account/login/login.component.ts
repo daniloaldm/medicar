@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       const result = await this.accountService.login(this.login);
       console.log(`Login efetuado: ${result}`);
 
-      alert("Conectado!");
+      alert("Conectado(a)!");
       this.router.navigate(['']);
     } catch (error) {
       alert("Dados Inválidos");

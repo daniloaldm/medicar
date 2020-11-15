@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,7 +15,8 @@ export class CreateAccountComponent implements OnInit {
   };
 
   constructor(
-    private accountService: AccountService
+    private accountService: AccountService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -26,6 +28,7 @@ export class CreateAccountComponent implements OnInit {
 
       alert("Conta criada com sucesso!");
       console.log(result);
+      this.router.navigate(['/login']);
     } catch (error) {
       alert("Dados Inválidos");
       console.error(error);
