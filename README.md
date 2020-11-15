@@ -5,13 +5,13 @@
 <p align="center">
    <a href="https://www.linkedin.com/in/danilo-alexandrino-4aaa1518b/">
    <a>
-      <img alt="Danilo Alexandrino" src="https://img.shields.io/badge/-Danilo%20Alexandrino-ff0000?style=flat&logo=Linkedin&logoColor=white" />
+      <img alt="Danilo Alexandrino" src="https://img.shields.io/badge/-Danilo%20Alexandrino-49B4BB?style=flat&logo=Linkedin&logoColor=white" />
   <a href="https://github.com/daniloaldm/medicar/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daniloaldm/medicar?color=ff0000">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daniloaldm/medicar?color=49B4BB">
   </a> 
-  <a href="https://github.com/daniloaldm/medicar/blob/master/frontend/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-ff0000">
+  <a href="https://github.com/daniloaldm/medicar/blob/master/frontend/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-49B4BB">
   </a>
-  <a href="https://github.com/daniloaldm/medicar/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/daniloaldm/medicar?color=ff0000&logo=github">
+  <a href="https://github.com/daniloaldm/medicar/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/daniloaldm/medicar?color=49B4BB&logo=github">
   </a>
 </p>
 
