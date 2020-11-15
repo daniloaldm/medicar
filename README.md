@@ -26,6 +26,7 @@ Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
 - :oil_drum: **Django Rest Framework** — Biblioteca para o Framework Django que disponibiliza funcionalidades para implementar APIs Rest de forma extremamente rápida.
 - :anchor: **Djoser**  — Fornece um conjunto de visualizações do Django Rest Framework para lidar com ações básicas, como registro, login, logout, redefinição de senha e ativação da conta. Funciona com modelo de usuário personalizado
 - :closed_lock_with_key: **Jwt**  — É um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia cuja sua payload contém o JSON que afirma algum número de declarações.
+- :a: **Angular** - O AngularJS é um framework de código aberto usado para construir aplicativos para web baseados em uma única página dinâmica.
 
 ## Instalação
 Clone o repositório:
