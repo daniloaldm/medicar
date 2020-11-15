@@ -6,14 +6,14 @@
     <p>
         <mat-form-field appearance="outline">
             <mat-label>Nome</mat-label>
-            <input matInput>
+            <input matInput type="text" name="username" id="username" [(ngModel)]="account.username">
         </mat-form-field>
     </p>
 
     <p>
         <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input matInput>
+            <input matInput type="text" name="email" id="email" [(ngModel)]="account.email">
         </mat-form-field>
     </p>
 
@@ -21,7 +21,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Senha</mat-label>
             <show-hide-password size="lg">
-                <input matInput type="password">
+                <input matInput type="password" name="password" id="password" [(ngModel)]="account.password">
             </show-hide-password>
         </mat-form-field>
     </p>
