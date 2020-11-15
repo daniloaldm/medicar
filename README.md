@@ -9,7 +9,7 @@
   <a href="https://github.com/daniloaldm/medicar/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daniloaldm/medicar?color=ff0000">
   </a> 
-  <a href="https://github.com/daniloaldm/medicar/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-ff0000">
+  <a href="https://github.com/daniloaldm/medicar/blob/master/frontend/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-ff0000">
   </a>
   <a href="https://github.com/daniloaldm/medicar/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/daniloaldm/medicar?color=ff0000&logo=github">
   </a>
