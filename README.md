@@ -34,7 +34,29 @@ Para testar a API com o Insomnia:
 
 # Instalação e Execução Frontend
 
-Construindo...
+Caso já possua o repositório pule esta etapa, caso não clone o repositório:
+```
+git clone git@github.com:daniloaldm/medicar.git
+```
+
+Vá para o diretório frontend:
+```
+cd frontend
+```
+
+Após isso, execute: 
+```
+npm install
+```
+Logo depois 
+```
+ng serve
+```
+
+Para testar acesse a url padrão local do Angular:
+```
+http://localhost:4200/
+```
 
 ## :man_technologist: Autor
 
