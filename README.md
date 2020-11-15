@@ -1,3 +1,19 @@
+<h1 align = "center">
+<strong>Medicar</strong>
+</h1>
+
+<p align="center">
+   <a href="https://www.linkedin.com/in/danilo-alexandrino-4aaa1518b/">
+   <a>
+      <img alt="Danilo Alexandrino" src="https://img.shields.io/badge/-Danilo%20Alexandrino-ff0000?style=flat&logo=Linkedin&logoColor=white" />
+  <a href="https://github.com/daniloaldm/medicar/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/daniloaldm/medicar?color=ff0000">
+  </a> 
+  <a href="https://github.com/daniloaldm/medicar/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/badge/license-MIT-ff0000">
+  </a>
+  <a href="https://github.com/daniloaldm/medicar/stargazers"><img alt="Stargazers" src="https://img.shields.io/github/stars/daniloaldm/medicar?color=ff0000&logo=github">
+  </a>
+</p>
 
 # Instalação e Execução Backend
 
