@@ -15,9 +15,7 @@
   </a>
 </p>
 
-# Instalação e Execução Backend
-
-## Tecnologias utilizadas
+# Tecnologias utilizadas
 
 <p align="center">
    <img src="https://img.shields.io/badge/python-%233776AB.svg?&style=for-the-badge&logo=python&logoColor=white">
@@ -38,7 +36,7 @@ Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
 - :closed_lock_with_key: **Jwt**  — É um padrão da Internet para a criação de dados com assinatura opcional e/ou criptografia cuja sua payload contém o JSON que afirma algum número de declarações.
 - :a: **Angular** - O AngularJS é um framework de código aberto usado para construir aplicativos para web baseados em uma única página dinâmica.
 
-## Instalação
+## Instalação e Execução Backend
 Clone o repositório:
 ```
 git clone git@github.com:daniloaldm/medicar.git
@@ -59,7 +57,7 @@ Para testar a API com o Insomnia:
 <br><br>
 <a href="https://insomnia.rest/run/?label=Medicar%20API&uri=https%3A%2F%2Fgithub.com%2Fdaniloaldm%2Fmedicar%2Fblob%2Fmaster%2FInsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 
-# Instalação e Execução Frontend
+## Instalação e Execução Frontend
 
 Caso já possua o repositório pule esta etapa, caso não clone o repositório:
 ```
