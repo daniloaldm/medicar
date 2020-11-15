@@ -22,6 +22,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
     MatSliderModule,
     MatSlideToggleModule,
     BrowserAnimationsModule,
-    ShowHidePasswordModule ,
+    ShowHidePasswordModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
