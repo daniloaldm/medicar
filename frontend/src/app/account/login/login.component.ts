@@ -27,7 +27,9 @@ export class LoginComponent implements OnInit {
       console.log(`Login efetuado: ${result}`);
 
       alert("Conectado(a)!");
-      this.router.navigate(['']);
+      this.router.navigate(['']).then(() => {
+        window.location.reload();
+      });
     } catch (error) {
       alert("Dados Inválidos");
       console.error(error);
