@@ -1,5 +1,7 @@
 .nav {
-    display: flex;
+    /* background: red; */
+    width: 534px;
+    margin: 0 auto;
     margin-top: 18px;
 }
 
@@ -7,31 +9,27 @@
     width: 90.37px;
     height: 25px;
     margin: 0 auto;
-    margin-left: 410px;
 }
 
 p {
     width: 85px;
-    height: 25px;
     font-size: 13px;
-    display: flex;
-    align-items: center;
     color: #A8A8A8;
     margin: 0 auto;
-    margin-left: 172px;
+    margin-top: -25px;
+    margin-left: 342px;
 }
 
 a {
     width: 85px;
-    height: 25px;
     font-size: 13px;
-    display: flex;
-    align-items: center;
     color: #49B4BB;
     margin: 0 auto;
-    margin-left: -40px;
-    margin-right: 400px;
     text-decoration: none;
+    margin-left: 460px;
+    /* margin-top: -25px; */
+    display: flex;
+    margin-top: -20px;
 }
 
 .list-consultations {
