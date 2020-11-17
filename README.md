@@ -1,6 +1,6 @@
-<h1 align = "center">
-<strong>Medicar</strong>
-</h1>
+<p align="center">
+   <img width="300" src="assets/logo.png">
+</p>
 
 <p align="center">
    <a href="https://www.linkedin.com/in/danilo-alexandrino-4aaa1518b/">
@@ -16,7 +16,7 @@
 </p>
 
 # Tecnologias utilizadas
-
+<!--
 <p align="center">
    <img src="https://img.shields.io/badge/python-%233776AB.svg?&style=for-the-badge&logo=python&logoColor=white">
    <img src="https://img.shields.io/badge/django%20-%23092E20.svg?&style=for-the-badge&logo=django&logoColor=white">
@@ -25,7 +25,7 @@
    <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E">
    <img src="https://img.shields.io/badge/typescript%20-%23007ACC.svg?&style=for-the-badge&logo=typescript&logoColor=white">
    <img src="https://img.shields.io/badge/angular%20-%23DD0031.svg?&style=for-the-badge&logo=angular&logoColor=white">
-</p>
+</p> -->
 
 Para o desenvolvimento do projeto foi utilizada as seguintes tecnologias:
 
