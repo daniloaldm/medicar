@@ -1,72 +1,91 @@
-.nav {
-    /* background: red; */
-    width: 534px;
-    margin: 0 auto;
-    margin-top: 18px;
-}
-
-.logo {
-    width: 90.37px;
-    height: 25px;
-    margin: 0 auto;
-}
-
-p {
-    width: 85px;
-    font-size: 13px;
-    color: #A8A8A8;
-    margin: 0 auto;
-    margin-top: -25px;
-    margin-left: 342px;
-}
-
-a {
-    width: 85px;
-    font-size: 13px;
-    color: #49B4BB;
-    margin: 0 auto;
-    text-decoration: none;
-    margin-left: 460px;
-    /* margin-top: -25px; */
-    display: flex;
-    margin-top: -20px;
-}
-
-.list-consultations {
-    width: 534px;
-    height: 688px;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 4px;
-    margin: 0 auto;
-    margin-top: 18px;
-}
-
-h3 {
-    width: 132px;
-    height: 58px;
-    font-weight: 550;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    color: #444444;
-    margin-left: 8px;
-    /* margin: 0 auto; */
-}
-
-.mat-flat-button {
-    width: 138px;
-    background: #49B4BB;
-    border-radius: 4px;
-    margin: 0 auto;
-    bottom: 58px;
-    margin-left: 382px;
-    height: 24px;
-}
-
-::ng-deep .mat-button .mat-icon-button,
-.mat-stroked-button,
-.mat-flat-button {
-    font-size: 13px;
-    line-height: 15px;
-}
+    .nav {
+        display: flex;
+        width: 600px;
+        align-items: center;
+        justify-content: space-between;
+        margin: auto;
+        padding: 16px;
+    }
+    
+    .logo {
+        width: 90.37px;
+        height: 25px;
+    }
+    
+    p {
+        font-size: 13px;
+        color: #A8A8A8;
+    }
+    
+    a {
+        font-size: 13px;
+        color: #49B4BB;
+        text-decoration: none;
+    }
+    
+    .nav-child {
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+    }
+    
+    .list-consultations {
+        width: 600px;
+        height: 688px;
+        background: #FFFFFF;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        margin: 0 auto;
+    }
+    
+    h3 {
+        margin: 0;
+        color: #444444;
+        font-weight: 500;
+    }
+    
+    .mat-flat-button {
+        width: 138px;
+        background: #49B4BB;
+        border-radius: 4px;
+        margin: 0;
+        height: 24px;
+    }
+    
+     ::ng-deep .mat-button .mat-icon-button,
+    .mat-stroked-button,
+    .mat-flat-button {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+    .cabecalho {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px;
+    }
+    
+    th {
+        color: #A8A8A8;
+        font-weight: 500;
+        text-align: left;
+        padding-right: 25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-right: 51px;
+    }
+    
+    td {
+        color: #444444;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: left;
+    }
+    
+    table {
+        padding: 16px;
+        margin: 0;
+    }
