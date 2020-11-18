@@ -10,6 +10,7 @@ import { Consulation } from './../shared/consulation';
 export class HomeComponent implements OnInit {
 
   consulations: Consulation[];
+  user = localStorage.getItem('username');
 
   constructor(private service: ConsulationService) { }
 
