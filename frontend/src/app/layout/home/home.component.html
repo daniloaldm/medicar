@@ -23,7 +23,7 @@
         <tr *ngFor="let consulation of consulations">
             <td>{{consulation.medico.especialidade.especialidade}}</td>
             <td>{{consulation.medico.nome}}</td>
-            <td>{{consulation.dia}}</td>
+            <td>{{consulation.dia | date: 'dd/MM/yyyy'}}</td>
             <td>{{consulation.horario}}</td>
             <td><a href="#"> X Desmarcar</a></td>
         </tr>
