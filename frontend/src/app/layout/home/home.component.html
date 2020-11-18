@@ -25,7 +25,10 @@
             <td>{{consulation.medico.nome}}</td>
             <td>{{consulation.dia | date: 'dd/MM/yyyy'}}</td>
             <td>{{consulation.horario}}</td>
-            <td><a href="#"> X Desmarcar</a></td>
+            <td>
+                <button mat-button color="primary" (click)="delete(row)">
+                x Desmarcar </button>
+            </td>
         </tr>
     </table>
 </div>

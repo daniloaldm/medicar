@@ -89,3 +89,8 @@
         padding: 16px;
         margin: 0;
     }
+    
+    .mat-button {
+        color: #49B4BB;
+        padding: 0;
+    }
