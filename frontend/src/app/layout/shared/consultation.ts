@@ -1,4 +1,4 @@
-export interface Consulation {
+export interface Consultation {
     id: number;
     dia: string;
     horario: string;

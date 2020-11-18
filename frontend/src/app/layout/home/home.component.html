@@ -20,13 +20,13 @@
             <th>HORA</th>
             <th></th>
         </tr>
-        <tr *ngFor="let consulation of consulations">
-            <td>{{consulation.medico.especialidade.especialidade}}</td>
-            <td>{{consulation.medico.nome}}</td>
-            <td>{{consulation.dia | date: 'dd/MM/yyyy'}}</td>
-            <td>{{consulation.horario}}</td>
+        <tr *ngFor="let consultation of consultations">
+            <td>{{consultation.medico.especialidade.especialidade}}</td>
+            <td>{{consultation.medico.nome}}</td>
+            <td>{{consultation.dia | date: 'dd/MM/yyyy'}}</td>
+            <td>{{consultation.horario}}</td>
             <td>
-                <button mat-button color="primary" (click)="delete(consulation)">
+                <button mat-button color="primary" (click)="delete(consultation)">
                 x Desmarcar </button>
             </td>
         </tr>

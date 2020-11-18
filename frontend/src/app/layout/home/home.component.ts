@@ -1,6 +1,6 @@
-import { ConsulationService } from './../shared/consulation.service';
+import { ConsultationService } from '../shared/consultation.service';
 import { Component, OnInit } from '@angular/core';
-import { Consulation } from './../shared/consulation';
+import { Consultation } from '../shared/consultation';
 
 @Component({
   selector: 'app-home',
@@ -9,18 +9,18 @@ import { Consulation } from './../shared/consulation';
 })
 export class HomeComponent implements OnInit {
 
-  consulations: Consulation[];
+  consultations: Consultation[];
   user = localStorage.getItem('username');
 
-  constructor(private service: ConsulationService) { }
+  constructor(private service: ConsultationService) { }
 
   ngOnInit() {
     this.service.list()
-      .subscribe(dados => this.consulations = dados);
+      .subscribe(dados => this.consultations = dados);
   }
 
-  delete(consulation){
-    this.service.delete(consulation.id).subscribe();
+  delete(consultation){
+    this.service.delete(consultation.id).subscribe();
     window.location.reload();
   }
 
