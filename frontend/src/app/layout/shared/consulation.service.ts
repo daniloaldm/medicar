@@ -18,4 +18,8 @@ export class ConsulationService {
         tap(console.log)
       );
   }
+
+  delete(id: number) {
+    return this.http.delete(`${environment.api}consultas/${id}`);
+  }
 }

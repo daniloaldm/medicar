@@ -19,4 +19,9 @@ export class HomeComponent implements OnInit {
       .subscribe(dados => this.consulations = dados);
   }
 
+  delete(consulation){
+    this.service.delete(consulation.id).subscribe();
+    window.location.reload();
+  }
+
 }
