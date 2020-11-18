@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     window.location.reload();
   }
 
+  disconnect(){
+    window.localStorage.removeItem('token');
+    window.location.reload();
+  }
 }
