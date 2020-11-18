@@ -20,11 +20,11 @@
             <th>HORA</th>
             <th></th>
         </tr>
-        <tr>
-            <td>Cardiologia</td>
-            <td>Dr. Caio Carlos Ferreira</td>
-            <td>01/01/2020</td>
-            <td>13:00</td>
+        <tr *ngFor="let consulation of consulations">
+            <td>{{consulation.medico.especialidade.especialidade}}</td>
+            <td>{{consulation.medico.nome}}</td>
+            <td>{{consulation.dia}}</td>
+            <td>{{consulation.horario}}</td>
             <td><a href="#"> X Desmarcar</a></td>
         </tr>
     </table>
