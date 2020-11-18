@@ -14,6 +14,7 @@ export class AccountService {
     const result = await this.http.post<any>(`${environment.api}auth/jwt/create/`, user).toPromise();
     if (result && result.access) {
       window.localStorage.setItem('token', result.access);
+      window.localStorage.setItem('username', user['username']);
       return true;
     }
 
