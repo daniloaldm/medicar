@@ -17,7 +17,7 @@
         </mat-form-field>
     </p>
 
-    <mat-checkbox>Lembar minha senha</mat-checkbox>
+    <mat-checkbox [checked]="login.checked" (change)="setChecked(!login.checked)">Lembar minha senha</mat-checkbox>
 
     <button mat-button color="accent" [routerLink]="['/create-account']">Criar Conta</button>
     <button type="submit" mat-flat-button color="accent">Acessar</button>

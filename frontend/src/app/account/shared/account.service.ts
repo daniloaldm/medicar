@@ -3,6 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 // import * as jwt_decode from 'jwt-decode';
 
+interface User {
+  username: string;
+  password: string;
+  checked: boolean;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,11 +16,21 @@ export class AccountService {
 
   constructor(private http: HttpClient) { }
 
-  async login(user: any) {
+  async login(user: User) {
     const result = await this.http.post<any>(`${environment.api}auth/jwt/create/`, user).toPromise();
     if (result && result.access) {
-      window.localStorage.setItem('token', result.access);
-      window.localStorage.setItem('username', user['username']);
+      localStorage.setItem('token', result.access);
+      localStorage.setItem('username', user.username);
+      
+      if(!user.checked){
+        localStorage.removeItem('password');
+        localStorage.removeItem('checked');
+        return true;
+      }
+      
+      localStorage.setItem('password', user.password);
+      localStorage.setItem('checked', user.checked.toString());
+
       return true;
     }
 

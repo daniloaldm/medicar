@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
   login = {
     username: '',
-    password: ''
+    password: '',
+    checked: false
   };
 
   constructor(
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.verificarChecked();
   }
 
   async onSubmit() {
@@ -33,6 +35,19 @@ export class LoginComponent implements OnInit {
     } catch (error) {
       alert("Dados Inválidos");
       console.error(error);
+    }
+  }
+
+  setChecked(checked) {
+    this.login.checked = checked;
+  }
+
+  verificarChecked(){
+    const isChecked = localStorage.getItem('checked'); 
+    if(isChecked){
+      this.login.username = localStorage.getItem('username');
+      this.login.password = localStorage.getItem('password'); 
+      this.login.checked = true;
     }
   }
 }
