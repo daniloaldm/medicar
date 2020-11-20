@@ -93,4 +93,10 @@
     .mat-button {
         color: #49B4BB;
         padding: 0;
+        right: 8px;
+    }
+    
+    .mat-icon {
+        font-size: 115%;
+        margin-top: 5px;
     }

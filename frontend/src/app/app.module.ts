@@ -21,6 +21,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShowHidePasswordModule } from 'ngx-show-hide-password';
+import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     CreateAccountComponent,
     HomeComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    // MatIconModule
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSlideToggleModule,
     BrowserAnimationsModule,
     ShowHidePasswordModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
