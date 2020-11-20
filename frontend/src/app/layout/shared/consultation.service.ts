@@ -15,7 +15,7 @@ export class ConsultationService {
   list () {
     return this.http.get<Consultation[]>(`${environment.api}consultas/`)
       .pipe(
-        tap(console.log)
+        tap()
       );
   }
 

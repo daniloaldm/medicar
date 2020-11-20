@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
   async onSubmit() {
     try {
       const result = await this.accountService.login(this.login);
-      console.log(`Login efetuado: ${result}`);
 
       alert("Conectado(a)!");
       this.router.navigate(['']).then(() => {

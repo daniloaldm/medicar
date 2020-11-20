@@ -27,7 +27,6 @@ export class CreateAccountComponent implements OnInit {
       const result = await this.accountService.createAccount(this.account);
 
       alert("Conta criada com sucesso!");
-      console.log(result);
       this.router.navigate(['/login']);
     } catch (error) {
       alert("Dados Inválidos");
