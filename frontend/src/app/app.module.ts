@@ -24,6 +24,7 @@ import { ShowHidePasswordModule } from 'ngx-show-hide-password';
 import {MatIconModule} from '@angular/material/icon';
 
 import { HttpClientModule } from '@angular/common/http';
+import { ConsultationComponent } from './layout/consultation/consultation.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreateAccountComponent,
     HomeComponent,
     AuthenticationComponent,
+    ConsultationComponent,
     // MatIconModule
   ],
   imports: [
