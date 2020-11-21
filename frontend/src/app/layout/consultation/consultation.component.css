@@ -29,7 +29,7 @@ h3 {
 
 form {
     display: grid;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .mat-form-field {
@@ -54,4 +54,32 @@ form {
 
 mat-label {
     color: #A8A8A8
+}
+
+.div-button {
+    margin: 0 auto;
+}
+
+.mat-flat-button {
+    background: #49B4BB;
+    display: block;
+    margin-top: -41px;
+    margin-left: 220px;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.mat-button {
+    background: #FFFFFF;
+    display: block;
+    margin-top: 3%;
+    margin-left: 0px;
+    width: 180px;
+    height: 40px;
+    border-radius: 8px;
+}
+
+.mat-button.mat-accent {
+    color: #49B4BB;
 }

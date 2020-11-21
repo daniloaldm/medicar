@@ -8,7 +8,7 @@
             <!-- teste -->
             <form>
                 <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>Especialidade</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
@@ -17,7 +17,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>Médico</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
@@ -26,7 +26,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>Data</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
@@ -35,7 +35,7 @@
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
-                    <mat-label>Favorite food</mat-label>
+                    <mat-label>Hora</mat-label>
                     <mat-select>
                         <mat-option *ngFor="let food of foods" [value]="food.value">
                             {{food.viewValue}}
@@ -43,10 +43,10 @@
                     </mat-select>
                 </mat-form-field>
 
-                <!-- <div>
-                    <button mat-button color="accent" [routerLink]="['/create-account']">Criar Conta</button>
-                    <button type="submit" mat-flat-button color="accent">Acessar</button>
-                </div> -->
+                <div class="div-button">
+                    <button mat-button color="accent" [routerLink]="['/home']">Cancelar</button>
+                    <button type="submit" mat-flat-button color="accent">Confirmar</button>
+                </div>
             </form>
         </div>
     </div>
