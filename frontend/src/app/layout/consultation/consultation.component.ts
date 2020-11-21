@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
-//teste
-interface Food {
-  value: string;
-  viewValue: string;
-}
+import { Schedule } from '../shared/schedule';
+import { ConsultationService } from '../shared/consultation.service';
 
 @Component({
   selector: 'app-consultation',
@@ -13,16 +9,12 @@ interface Food {
 })
 export class ConsultationComponent implements OnInit {
 
-  //teste
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'}
-  ];
+  schedules: Schedule[];
 
-  constructor() { }
+  constructor(private service: ConsultationService) { }
 
   ngOnInit(): void {
+    this.service.getSchedule().subscribe(dados => this.schedules = dados);
   }
 
 }

@@ -5,40 +5,39 @@
         </div>
 
         <div class="div-drop">
-            <!-- teste -->
             <form>
                 <mat-form-field appearance="fill">
                     <mat-label>Especialidade</mat-label>
                     <mat-select>
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.especialidade.especialidade">
+                            {{schedule.medico.especialidade.especialidade}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Médico</mat-label>
-                    <mat-select [disabled]="true">
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                    <mat-select [disabled]="false">
+                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.nome">
+                            {{schedule.medico.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Data</mat-label>
-                    <mat-select [disabled]="true">
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                    <mat-select [disabled]="false">
+                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.dia">
+                            {{schedule.dia}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
 
                 <mat-form-field appearance="fill">
                     <mat-label>Hora</mat-label>
-                    <mat-select [disabled]="true">
-                        <mat-option *ngFor="let food of foods" [value]="food.value">
-                            {{food.viewValue}}
+                    <mat-select [disabled]="false">
+                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.horarios">
+                            {{schedule.horarios}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
