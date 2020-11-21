@@ -5,7 +5,7 @@
         </div>
 
         <div class="div-drop">
-            <form>
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Especialidade</mat-label>
                     <mat-select>

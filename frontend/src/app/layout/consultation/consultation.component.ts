@@ -17,4 +17,18 @@ export class ConsultationComponent implements OnInit {
     this.service.getSchedule().subscribe(dados => this.schedules = dados);
   }
 
+  async onSubmit() {
+    try {
+      // const result = await this.accountService.login(this.login);
+
+      // alert("Conectado(a)!");
+      // this.router.navigate(['']).then(() => {
+      //   window.location.reload();
+      // });
+    } catch (error) {
+      alert("Dados Inválidos");
+      console.error(error);
+    }
+  }
+
 }
