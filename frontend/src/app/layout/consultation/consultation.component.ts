@@ -51,6 +51,7 @@ export class ConsultationComponent implements OnInit {
   onChangeEspecialidade(event) {
     console.log(event.value);
     this.medicoED = false;
+    console.log(this.schedules);
   }
 
   onChangeMedico(event) {

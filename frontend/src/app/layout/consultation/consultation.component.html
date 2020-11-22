@@ -28,7 +28,7 @@
                     <mat-label>Data</mat-label>
                     <mat-select id="dia" [disabled]="dataED" (selectionChange)="onChangeData($event)">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.dia">
-                            {{schedule.dia}}
+                            {{schedule.dia | date: 'dd/MM/yyyy'}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
