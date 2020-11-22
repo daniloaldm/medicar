@@ -24,7 +24,6 @@ export class ConsultationComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // let { value } = this.form;
     this.form = this.formBuilder.group({
       especialidade: [null],
       nome: [null],
@@ -47,11 +46,6 @@ export class ConsultationComponent implements OnInit {
       console.error(error);
     }
   }
-
-  
-  // enableMedico() {
-
-  // }
 
   onChangeEspecialidade(event) {
     console.log(event.value);
