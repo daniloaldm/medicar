@@ -13,6 +13,10 @@ export class ConsultationComponent implements OnInit {
 
   form: FormGroup;
   schedules: Schedule[];
+  medicoED = true;
+  dataED = true;
+  horaED = true;
+
 
   constructor(
     private service: ConsultationService, 
@@ -51,11 +55,17 @@ export class ConsultationComponent implements OnInit {
 
   onChangeEspecialidade(event) {
     console.log(event.value);
-    let especialidade = this.form.get('especialidade');
-    console.log(especialidade.value);
-    let nome = this.form.get('nome');
-    console.log(nome.value);
+    this.medicoED = false;
   }
 
+  onChangeMedico(event) {
+    console.log(event.value);
+    this.dataED = false;
+  }
+
+  onChangeData(event) {
+    console.log(event.value);
+    this.horaED = false;
+  }
 
 }
