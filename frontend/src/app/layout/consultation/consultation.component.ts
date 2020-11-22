@@ -31,4 +31,7 @@ export class ConsultationComponent implements OnInit {
     }
   }
 
+  onChangeEspecialidade(event) {
+    console.log(event.value);
+  }
 }

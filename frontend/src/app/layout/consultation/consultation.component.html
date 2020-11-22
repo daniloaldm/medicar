@@ -8,7 +8,7 @@
             <form (ngSubmit)="onSubmit()" #form="ngForm">
                 <mat-form-field appearance="fill">
                     <mat-label>Especialidade</mat-label>
-                    <mat-select>
+                    <mat-select id="especialidade" (selectionChange)="onChangeEspecialidade($event)">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.especialidade.especialidade">
                             {{schedule.medico.especialidade.especialidade}}
                         </mat-option>
@@ -17,7 +17,7 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Médico</mat-label>
-                    <mat-select [disabled]="false">
+                    <mat-select id="medico-nome" [disabled]="true">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.nome">
                             {{schedule.medico.nome}}
                         </mat-option>
@@ -26,7 +26,7 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Data</mat-label>
-                    <mat-select [disabled]="false">
+                    <mat-select id="dia" [disabled]="true">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.dia">
                             {{schedule.dia}}
                         </mat-option>
@@ -35,7 +35,7 @@
 
                 <mat-form-field appearance="fill">
                     <mat-label>Hora</mat-label>
-                    <mat-select [disabled]="false">
+                    <mat-select id="horarios" [disabled]="true">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.horarios">
                             {{schedule.horarios}}
                         </mat-option>
