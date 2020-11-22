@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Schedule } from '../shared/schedule';
 import { ConsultationService } from '../shared/consultation.service';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-consultation',
@@ -9,11 +11,22 @@ import { ConsultationService } from '../shared/consultation.service';
 })
 export class ConsultationComponent implements OnInit {
 
+  form: FormGroup;
   schedules: Schedule[];
 
-  constructor(private service: ConsultationService) { }
+  constructor(
+    private service: ConsultationService, 
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    // let { value } = this.form;
+    this.form = this.formBuilder.group({
+      especialidade: [null],
+      nome: [null],
+      dia: [null],
+      horarios: [null]
+    });
     this.service.getSchedule().subscribe(dados => this.schedules = dados);
   }
 
@@ -31,7 +44,18 @@ export class ConsultationComponent implements OnInit {
     }
   }
 
+  
+  // enableMedico() {
+
+  // }
+
   onChangeEspecialidade(event) {
     console.log(event.value);
+    let especialidade = this.form.get('especialidade');
+    console.log(especialidade.value);
+    let nome = this.form.get('nome');
+    console.log(nome.value);
   }
+
+
 }

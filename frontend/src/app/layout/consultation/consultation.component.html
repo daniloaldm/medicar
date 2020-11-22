@@ -5,10 +5,10 @@
         </div>
 
         <div class="div-drop">
-            <form (ngSubmit)="onSubmit()" #form="ngForm">
+            <form (ngSubmit)="onSubmit()" [formGroup]="form">
                 <mat-form-field appearance="fill">
                     <mat-label>Especialidade</mat-label>
-                    <mat-select id="especialidade" (selectionChange)="onChangeEspecialidade($event)">
+                    <mat-select formControlName="especialidade" id="especialidade" (selectionChange)="onChangeEspecialidade($event)">
                         <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.especialidade.especialidade">
                             {{schedule.medico.especialidade.especialidade}}
                         </mat-option>
