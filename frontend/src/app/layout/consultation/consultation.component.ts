@@ -16,6 +16,7 @@ export class ConsultationComponent implements OnInit {
   medicoED = true;
   dataED = true;
   horaED = true;
+  buttonED = true;
 
 
   constructor(
@@ -62,4 +63,8 @@ export class ConsultationComponent implements OnInit {
     this.horaED = false;
   }
 
+  onChangeHora(event) {
+    console.log(event.value);
+    this.buttonED = false;
+  }
 }
