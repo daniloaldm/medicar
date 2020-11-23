@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Schedule } from '../shared/schedule';
 import { ConsultationService } from '../shared/consultation.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
 
 
 @Component({
@@ -12,26 +13,36 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class ConsultationComponent implements OnInit {
 
   form: FormGroup;
-  schedules: Schedule[];
+  schedules: Schedule;
   medicoED = true;
   dataED = true;
   horaED = true;
   buttonED = true;
 
+  medicosFilter = [];
+  dataFilter = [];
+  horarioFilter = [];
+  horarioMap = [];
 
   constructor(
-    private service: ConsultationService, 
+    public service: ConsultationService, 
     private formBuilder: FormBuilder
   ) { }
 
   ngOnInit(): void {
+    // let {value}  = this.form;
     this.form = this.formBuilder.group({
       especialidade: [null],
       nome: [null],
       dia: [null],
       horarios: [null]
     });
-    this.service.getSchedule().subscribe(dados => this.schedules = dados);
+
+    this.consultarMedicos();
+  }
+
+  async consultarMedicos() {
+    await this.service.getSchedule().subscribe(dados => this.schedules = dados);
   }
 
   async onSubmit() {
@@ -49,23 +60,64 @@ export class ConsultationComponent implements OnInit {
   }
 
   onChangeEspecialidade(event) {
-    console.log(event.value);
+    const especialidade = event.value;
+    
+    const medicos = this.schedules;
+
+    this.medicosFilter = [];
+
+    Object.values(medicos).find(medico => {
+      if (medico.medico.especialidade.especialidade === especialidade) {
+        this.medicosFilter.push(medico);
+      }
+    });
+
     this.medicoED = false;
-    console.log(this.schedules);
   }
 
   onChangeMedico(event) {
-    console.log(event.value);
+    const medicos = this.schedules;
+
+    const medicoId = event.value;
+
+    this.dataFilter = [];
+
+    Object.values(medicos).find(medico => {
+      if (medico.id === medicoId) {
+        this.dataFilter.push(medico);
+      }
+    });
+
     this.dataED = false;
   }
 
   onChangeData(event) {
     console.log(event.value);
+
+    const medicos = this.schedules;
+
+    const medicoId = event.value;
+
+    this.horarioFilter = [];
+
+    Object.values(medicos).find(medico => {
+      if (medico.id === medicoId) {
+        this.horarioFilter.push(medico.horarios);
+      }
+    });
+
+    this.horarioMap = [];
+
+    this.horarioFilter.map((horario) => {
+      horario.map(hor => {
+        this.horarioMap.push(hor);
+      })
+    })
+    
     this.horaED = false;
   }
 
   onChangeHora(event) {
-    console.log(event.value);
     this.buttonED = false;
   }
 }

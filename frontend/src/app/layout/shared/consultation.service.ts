@@ -25,7 +25,7 @@ export class ConsultationService {
   }
 
   getSchedule() {
-    return this.http.get<Schedule[]>(`${environment.api}agendas/`)
+    return this.http.get<Schedule>(`${environment.api}agendas/`)
       .pipe(
         tap()
         // catchError((err) => {
@@ -33,5 +33,16 @@ export class ConsultationService {
         //   return throwError(err);
         // })
       );
+  }
+
+  getScheduleByMedicoId(id: number) {
+    return this.http.get<Schedule[]>(`${environment.api}agendas/?medico=${id}`)
+    .pipe(
+      tap()
+      // catchError((err) => {
+      //   console.log(`@ERROR! ${err.message}`);
+      //   return throwError(err);
+      // })
+    );
   }
 }

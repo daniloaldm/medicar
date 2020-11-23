@@ -18,8 +18,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Médico</mat-label>
                     <mat-select id="medico-nome" [disabled]="medicoED" (selectionChange)="onChangeMedico($event)">
-                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.medico.nome">
-                            {{schedule.medico.nome}}
+                        <mat-option *ngFor="let medico of medicosFilter" [value]="medico.id">
+                            {{medico.medico.nome}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -27,8 +27,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Data</mat-label>
                     <mat-select id="dia" [disabled]="dataED" (selectionChange)="onChangeData($event)">
-                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.dia">
-                            {{schedule.dia | date: 'dd/MM/yyyy'}}
+                        <mat-option *ngFor="let data of dataFilter" [value]="data.id">
+                            {{data.dia | date: 'dd/MM/yyyy'}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -36,8 +36,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Hora</mat-label>
                     <mat-select id="horarios" [disabled]="horaED" (selectionChange)="onChangeHora($event)">
-                        <mat-option *ngFor="let schedule of schedules" [value]="schedule.horarios">
-                            {{schedule.horarios}}
+                        <mat-option *ngFor="let horario of horarioMap" [value]="horario">
+                            {{horario}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
