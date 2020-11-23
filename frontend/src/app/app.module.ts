@@ -26,6 +26,9 @@ import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 import { ConsultationComponent } from './layout/consultation/consultation.component';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import {AuthInterceptor} from '../app/account/shared/auth.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -57,7 +60,9 @@ import { ConsultationComponent } from './layout/consultation/consultation.compon
     HttpClientModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

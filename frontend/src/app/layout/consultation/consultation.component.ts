@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Schedule } from '../shared/schedule';
 import { ConsultationService } from '../shared/consultation.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,14 +24,16 @@ export class ConsultationComponent implements OnInit {
   dataFilter = [];
   horarioFilter = [];
   horarioMap = [];
+  agendaId = '';
+  horaSelecionada = '';
 
   constructor(
     public service: ConsultationService, 
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    // let {value}  = this.form;
     this.form = this.formBuilder.group({
       especialidade: [null],
       nome: [null],
@@ -47,12 +50,18 @@ export class ConsultationComponent implements OnInit {
 
   async onSubmit() {
     try {
-      // const result = await this.accountService.login(this.login);
+      const payload = {
+        id_agenda: this.agendaId,
+        horario: this.horaSelecionada
+      };
 
-      // alert("Conectado(a)!");
-      // this.router.navigate(['']).then(() => {
-      //   window.location.reload();
-      // });
+      // console.log(payload);
+      const result = await this.service.setConsultation(payload);
+
+      alert("Nova Consulta Cadastrada!");
+      this.router.navigate(['']).then(() => {
+        window.location.reload();
+      });
     } catch (error) {
       alert("Dados Inválidos");
       console.error(error);
@@ -92,8 +101,6 @@ export class ConsultationComponent implements OnInit {
   }
 
   onChangeData(event) {
-    console.log(event.value);
-
     const medicos = this.schedules;
 
     const medicoId = event.value;
@@ -102,6 +109,7 @@ export class ConsultationComponent implements OnInit {
 
     Object.values(medicos).find(medico => {
       if (medico.id === medicoId) {
+        this.agendaId = event.value;
         this.horarioFilter.push(medico.horarios);
       }
     });
@@ -118,6 +126,8 @@ export class ConsultationComponent implements OnInit {
   }
 
   onChangeHora(event) {
+    this.horaSelecionada = event.value;
+
     this.buttonED = false;
   }
 }

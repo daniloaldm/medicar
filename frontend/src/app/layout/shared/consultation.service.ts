@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Consultation } from './consultation';
 import { Schedule } from './schedule';
-import { tap } from  'rxjs/operators';
+import { catchError, tap } from  'rxjs/operators';
 // import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
@@ -44,5 +44,14 @@ export class ConsultationService {
       //   return throwError(err);
       // })
     );
+  }
+
+  setConsultation(agendamento: any) {
+    console.log(agendamento);
+    return this.http.post<any>(`${environment.api}consultas/`, agendamento)
+    .toPromise()
+    .catch(err => {
+      return "Error"
+    });
   }
 }
