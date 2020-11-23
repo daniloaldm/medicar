@@ -55,7 +55,6 @@ export class ConsultationComponent implements OnInit {
         horario: this.horaSelecionada
       };
 
-      // console.log(payload);
       const result = await this.service.setConsultation(payload);
 
       alert("Nova Consulta Cadastrada!");

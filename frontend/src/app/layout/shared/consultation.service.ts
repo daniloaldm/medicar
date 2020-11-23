@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Consultation } from './consultation';
 import { Schedule } from './schedule';
 import { catchError, tap } from  'rxjs/operators';
-// import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -26,28 +25,15 @@ export class ConsultationService {
 
   getSchedule() {
     return this.http.get<Schedule>(`${environment.api}agendas/`)
-      .pipe(
-        tap()
-        // catchError((err) => {
-        //   console.log(`@ERROR! ${err.message}`);
-        //   return throwError(err);
-        // })
-      );
+      .pipe(tap());
   }
 
   getScheduleByMedicoId(id: number) {
     return this.http.get<Schedule[]>(`${environment.api}agendas/?medico=${id}`)
-    .pipe(
-      tap()
-      // catchError((err) => {
-      //   console.log(`@ERROR! ${err.message}`);
-      //   return throwError(err);
-      // })
-    );
+    .pipe(tap());
   }
 
   setConsultation(agendamento: any) {
-    console.log(agendamento);
     return this.http.post<any>(`${environment.api}consultas/`, agendamento)
     .toPromise()
     .catch(err => {

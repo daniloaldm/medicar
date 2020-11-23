@@ -37,8 +37,7 @@ import {AuthInterceptor} from '../app/account/shared/auth.interceptor';
     CreateAccountComponent,
     HomeComponent,
     AuthenticationComponent,
-    ConsultationComponent,
-    // MatIconModule
+    ConsultationComponent
   ],
   imports: [
     BrowserModule,
