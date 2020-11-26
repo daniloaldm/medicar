@@ -63,7 +63,6 @@ export class ConsultationComponent implements OnInit {
         horario: this.horaSelecionada
       };
 
-      console.log(this.validForm(payload));
       if(this.validForm(payload)){
         const result = await this.service.setConsultation(payload);
         this.router.navigate(['']).then(() => {
