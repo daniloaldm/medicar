@@ -4,6 +4,7 @@ import { ConsultationService } from '../shared/consultation.service';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { normalizeGenFileSuffix } from '@angular/compiler/src/aot/util';
 import { Router } from '@angular/router';
+import { Consultation } from '../shared/consultation';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class ConsultationComponent implements OnInit {
   dataED = true;
   horaED = true;
   buttonED = true;
+  consultations: Consultation[];
 
   medicosFilter = [];
   dataFilter = [];
@@ -26,6 +28,7 @@ export class ConsultationComponent implements OnInit {
   horarioMap = [];
   agendaId = '';
   horaSelecionada = '';
+  diaSelecionado = '';
 
   constructor(
     public service: ConsultationService, 
@@ -42,10 +45,15 @@ export class ConsultationComponent implements OnInit {
     });
 
     this.consultarMedicos();
+    this.consultas();
   }
 
   async consultarMedicos() {
     await this.service.getSchedule().subscribe(dados => this.schedules = dados);
+  }
+
+  async consultas() {
+    await this.service.list().subscribe(dados => this.consultations = dados);
   }
 
   async onSubmit() {
@@ -55,12 +63,15 @@ export class ConsultationComponent implements OnInit {
         horario: this.horaSelecionada
       };
 
-      const result = await this.service.setConsultation(payload);
+      if(this.validForm(payload)){
+        const result = await this.service.setConsultation(payload);
+        this.router.navigate(['']).then(() => {
+          window.location.reload();
+        });
+      }else{
+        alert('Já existe uma consulta com esse médico marcada para o mesmo dia e horário selecionado!');
+      }
 
-      alert("Nova Consulta Cadastrada!");
-      this.router.navigate(['']).then(() => {
-        window.location.reload();
-      });
     } catch (error) {
       alert("Dados Inválidos");
       console.error(error);
@@ -100,6 +111,7 @@ export class ConsultationComponent implements OnInit {
   }
 
   onChangeData(event) {
+    this.diaSelecionado = document.getElementById("dia-selecionado").textContent;
     const medicos = this.schedules;
 
     const medicoId = event.value;
@@ -128,5 +140,19 @@ export class ConsultationComponent implements OnInit {
     this.horaSelecionada = event.value;
 
     this.buttonED = false;
+  }
+
+  validForm(payload){
+    const consultationExists = this.consultations;
+    let auxBoolean = true;
+    Object.values(consultationExists).find(consultation => {
+      let consultationFormated = consultation.horario.substring(0, consultation.horario.length - 3);
+      this.diaSelecionado = this.diaSelecionado.split("/").reverse().join("");
+      this.diaSelecionado = this.diaSelecionado.replace(" ", "-");
+      if ((consultationFormated == payload.horario) && (consultation.dia == this.diaSelecionado)) {
+        auxBoolean = false;
+      }
+    });
+    return auxBoolean;
   }
 }

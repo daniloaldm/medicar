@@ -27,7 +27,7 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Data</mat-label>
                     <mat-select id="dia" [disabled]="dataED" (selectionChange)="onChangeData($event)">
-                        <mat-option *ngFor="let data of dataFilter" [value]="data.id">
+                        <mat-option id='dia-selecionado' *ngFor="let data of dataFilter" [value]="data.id">
                             {{data.dia | date: 'dd/MM/yyyy'}}
                         </mat-option>
                     </mat-select>
