@@ -82,6 +82,27 @@ Para testar acesse a url padrão local do Angular:
 ```
 http://localhost:4200/
 ```
+### Layout 
+
+- :a: **Login** 
+<p align="center">
+   <img width="800" src="frontend/src/assets/login.jpeg">
+</p>
+
+- :a: **Cadastro** 
+<p align="center">
+   <img width="800" src="frontend/src/assets/cadastro.jpeg">
+</p>
+
+- :a: **Página Inicial** 
+<p align="center">
+   <img width="800" src="frontend/src/assets/home.jpeg">
+</p>
+
+- :a: **Nova Consulta** 
+<p align="center">
+   <img width="800" src="frontend/src/assets/nova-consulta.jpeg">
+</p>
 
 ## :man_technologist: Autor
 
