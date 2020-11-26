@@ -63,6 +63,7 @@ export class ConsultationComponent implements OnInit {
         horario: this.horaSelecionada
       };
 
+      console.log(this.validForm(payload));
       if(this.validForm(payload)){
         const result = await this.service.setConsultation(payload);
         this.router.navigate(['']).then(() => {
@@ -148,6 +149,7 @@ export class ConsultationComponent implements OnInit {
     Object.values(consultationExists).find(consultation => {
       let consultationFormated = consultation.horario.substring(0, consultation.horario.length - 3);
       this.diaSelecionado = this.diaSelecionado.split("/").reverse().join("");
+      this.diaSelecionado = this.diaSelecionado.replace(" ", "-");
       this.diaSelecionado = this.diaSelecionado.replace(" ", "-");
       if ((consultationFormated == payload.horario) && (consultation.dia == this.diaSelecionado)) {
         auxBoolean = false;
