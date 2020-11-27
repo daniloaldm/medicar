@@ -45,7 +45,7 @@ Vá para o diretório backend:
 ```
 cd backend
 ```
-Para facilitar a execução deixei o banco de dados fora do .gitignore. Execute:
+Execute:
 ```
 pip install -r requirements.txt
 ```
