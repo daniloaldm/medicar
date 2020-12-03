@@ -1,24 +1,28 @@
-<form (ngSubmit)="onSubmit()" #form="ngForm">
-    <img class="logo" src="../../../assets/logo.png">
+<div class="content-form">
+    <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div>
+            <img class="logo" src="../../../assets/logo.png">
+        </div>
 
-    <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Email ou Login</mat-label>
-            <input matInput type="username" name="username" id="username" [(ngModel)]="login.username">
-        </mat-form-field>
-    </p>
+        <div class="input-form">
+            <mat-form-field appearance="outline">
+                <mat-label>Email ou Login</mat-label>
+                <input matInput type="username" name="username" id="username" [(ngModel)]="login.username">
+            </mat-form-field>
 
-    <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Senha</mat-label>
-            <show-hide-password size="lg">
-                <input matInput type="password" name="password" id="password" [(ngModel)]="login.password">
-            </show-hide-password>
-        </mat-form-field>
-    </p>
+            <mat-form-field appearance="outline">
+                <mat-label>Senha</mat-label>
+                <show-hide-password size="lg">
+                    <input matInput type="password" name="password" id="password" [(ngModel)]="login.password">
+                </show-hide-password>
+            </mat-form-field>
 
-    <mat-checkbox [checked]="login.checked" (change)="setChecked(!login.checked)">Lembar minha senha</mat-checkbox>
+            <mat-checkbox [checked]="login.checked" (change)="setChecked(!login.checked)">Lembar minha senha</mat-checkbox>
+        </div>
 
-    <button mat-button color="accent" [routerLink]="['/create-account']">Criar Conta</button>
-    <button type="submit" mat-flat-button color="accent">Acessar</button>
-</form>
+        <div class="button-form">
+            <button mat-button color="accent" [routerLink]="['/create-account']">Criar Conta</button>
+            <button type="submit" mat-flat-button color="accent">Acessar</button>
+        </div>
+    </form>
+</div>
