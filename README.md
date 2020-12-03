@@ -47,9 +47,18 @@ cd backend
 ```
 Execute:
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
-Após isso, basta executar: 
+Após isso para gerar o banco, executar: 
+```
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
+Para criar um usuário administrador:
+```
+python3 manage.py createsuperuser
+```
+E por fim, para executar a api:
 ```
 python3 manage.py runserver
 ```
@@ -60,10 +69,6 @@ Para testar a API com o Insomnia:
 Obs:
 
 Url de admin: http://127.0.0.1:8000/admin
-
-Login: admin
-
-Senha: admin123
 
 ## Instalação e Execução Frontend
 
