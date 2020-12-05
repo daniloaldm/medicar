@@ -32,6 +32,7 @@ input.mat-input-element {
 mat-checkbox {
     margin-top: 25px;
     background: #FFFFFF;
+    cursor: pointer;
 }
 
 .button-form {
@@ -108,4 +109,6 @@ mat-checkbox {
     transform: translate(-50%);
     right: -20px;
     top: 15%;
+    outline: none;
+    cursor: pointer;
 }
