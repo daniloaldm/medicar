@@ -1,7 +1,9 @@
 <form (ngSubmit)="onSubmit()" #form="ngForm">
-    <img class="logo" src="../../../assets/logo.png">
 
-    <h1>Crie sua conta</h1>
+    <div class="label-logo">
+        <img class="logo" src="../../../assets/logo.png">
+        <h1>Crie sua conta</h1>
+    </div>
 
     <p>
         <mat-form-field appearance="outline">
@@ -35,6 +37,9 @@
         </mat-form-field>
     </p>
 
-    <button mat-button color="accent" [routerLink]="['/login']">Cancelar</button>
-    <button type="submit" mat-flat-button color="accent">Confirmar</button>
+    <div class="buttons-form">
+        <button mat-button color="accent" [routerLink]="['/login']">Cancelar</button>
+        <button type="submit" mat-flat-button color="accent">Confirmar</button>
+    </div>
+
 </form>
