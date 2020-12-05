@@ -38,6 +38,7 @@ mat-checkbox {
 .button-form {
     display: flex;
     margin: 41px auto;
+    flex-direction: row-reverse;
 }
 
 .mat-button {
@@ -45,6 +46,7 @@ mat-checkbox {
     width: 180px;
     height: 40px;
     border-radius: 8px;
+    margin-right: 40px;
 }
 
 .mat-flat-button {
@@ -52,7 +54,6 @@ mat-checkbox {
     width: 180px;
     height: 40px;
     border-radius: 8px;
-    margin-left: 40px;
 }
 
 .mat-button.mat-accent {
