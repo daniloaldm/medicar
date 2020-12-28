@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-account',
@@ -26,11 +27,29 @@ export class CreateAccountComponent implements OnInit {
     try {
       const result = await this.accountService.createAccount(this.account);
 
-      alert("Conta criada com sucesso!");
+      Swal.fire({
+        icon: 'success',
+        title: 'Usuario cadastrado com sucesso',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      
       this.router.navigate(['/login']);
     } catch (error) {
-      alert("Dados Inválidos");
-      console.error(error);
+      let msgerror = '';
+
+      Object.keys(error.error).map(variavel => {
+        error.error[variavel].map(text => {
+            msgerror = msgerror + text + '\n\n'
+        })
+      });
+
+      Swal.fire({
+        icon: 'error',
+        title: msgerror,
+        showConfirmButton: false,
+        timer: 10000,
+      });
     }
   }
 
