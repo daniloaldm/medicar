@@ -32,11 +32,13 @@ export class LoginComponent implements OnInit {
         icon: 'success',
         title: 'Logado com Sucesso!',
         showConfirmButton: false,
-        timer: 2000,
+        timer: 1600,
       });
 
       this.router.navigate(['']).then(() => {
-        window.location.reload();
+        setTimeout(function () {
+          window.location.reload();
+      }, 1600);
       });
     } catch (error) {
       let msgerror = '';
