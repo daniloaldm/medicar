@@ -26,7 +26,6 @@ export class CreateAccountComponent implements OnInit {
 
   async onSubmit() {
     try {
-      console.log(this.account.password2);
       if(this.account.password == this.account.password2){
         const result = await this.accountService.createAccount(this.account);
 
