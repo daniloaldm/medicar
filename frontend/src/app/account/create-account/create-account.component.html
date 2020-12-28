@@ -32,7 +32,7 @@
         <mat-form-field appearance="outline">
             <mat-label>Confirmar Senha</mat-label>
             <show-hide-password size="lg">
-                <input matInput type="password">
+                <input matInput type="password" name="password2" id="password2" [(ngModel)]="account.password2">
             </show-hide-password>
         </mat-form-field>
     </p>

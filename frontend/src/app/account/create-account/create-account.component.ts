@@ -12,7 +12,8 @@ export class CreateAccountComponent implements OnInit {
   account = {
     username: '',
     email: '',
-    password: ''
+    password: '',
+    password2: ''
   };
 
   constructor(
@@ -25,16 +26,27 @@ export class CreateAccountComponent implements OnInit {
 
   async onSubmit() {
     try {
-      const result = await this.accountService.createAccount(this.account);
+      console.log(this.account.password2);
+      if(this.account.password == this.account.password2){
+        const result = await this.accountService.createAccount(this.account);
 
-      Swal.fire({
-        icon: 'success',
-        title: 'Usuario cadastrado com sucesso',
-        showConfirmButton: false,
-        timer: 2000,
-      });
+        Swal.fire({
+          icon: 'success',
+          title: 'Usuario cadastrado com sucesso',
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        
+        this.router.navigate(['/login']);
+      }else{
+        Swal.fire({
+          icon: 'error',
+          title: 'Sua senha está diferente da confirmação de senha, por favor, verifique se os campos "Senha" e "Confirmar Senha" estão iguais.',
+          showConfirmButton: false,
+          timer: 10000,
+        });
+      }
       
-      this.router.navigate(['/login']);
     } catch (error) {
       let msgerror = '';
 
