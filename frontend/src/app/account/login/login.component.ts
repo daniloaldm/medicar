@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
         window.location.reload();
       });
     } catch (error) {
-      console.error(error);
       let msgerror = '';
 
       Object.keys(error.error).map(variavel => {
