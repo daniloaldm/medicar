@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { AccountService } from './../shared/account.service';
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -27,13 +28,31 @@ export class LoginComponent implements OnInit {
     try {
       const result = await this.accountService.login(this.login);
 
-      alert("Conectado(a)!");
+      Swal.fire({
+        icon: 'success',
+        title: 'Logado com Sucesso!',
+        showConfirmButton: false,
+        timer: 2000,
+      });
+
       this.router.navigate(['']).then(() => {
         window.location.reload();
       });
     } catch (error) {
-      alert("Dados Inválidos");
       console.error(error);
+      let msgerror = '';
+
+      Object.keys(error.error).map(variavel => {
+        msgerror =  error.error[variavel]
+      });
+
+      Swal.fire({
+        icon: 'error',
+        title: msgerror,
+        showConfirmButton: false,
+        timer: 10000,
+      });
+
     }
   }
 
