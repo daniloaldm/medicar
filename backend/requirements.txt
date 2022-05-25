@@ -7,4 +7,4 @@ djangorestframework==3.11.0
 djangorestframework-jwt==1.11.0
 djangorestframework-simplejwt==4.5.0
 djoser==2.0.3
-PyJWT==1.7.1
+PyJWT==2.4.0
